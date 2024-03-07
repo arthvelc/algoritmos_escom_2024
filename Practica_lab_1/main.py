@@ -2,13 +2,13 @@ import random
 import time
 import pandas as pd
 
-def search_one_array(A, t):
+def buscar_un_arreglo(A, t):
     for i in range(len(A)):
         if A[i] == t:
             return True
     return False
 
-def search_two_arrays(A, B, t):
+def buscar_dos_arreglos(A, B, t):
     for i in range(len(A)):
         if A[i] == t:
             return True
@@ -17,59 +17,63 @@ def search_two_arrays(A, B, t):
             return True
     return False
 
-def check_common_element(A, B):
+def verificar_elemento_comun(A, B):
     for i in range(len(A)):
         for j in range(len(B)):
             if A[i] == B[j]:
                 return True
     return False
 
-def check_duplicates(A):
+def verificar_duplicados(A):
     for i in range(len(A)):
         for j in range(i+1, len(A)):
             if A[i] == A[j]:
                 return True
     return False
 
-# Generate random arrays
-n_values = [10, 100, 1000, 10000, 1000000]
-arrays = []
-for n in n_values:
-    array = [random.randint(1, 100) for _ in range(n)]
-    arrays.append(array)
+def main():
+    # Generar arreglos aleatorios
+    valores_n = [10, 100, 1000, 10000, 1000000]
+    arreglos = []
+    for n in valores_n:
+        arreglo = [random.randint(1, 100) for _ in range(n)]
+        arreglos.append(arreglo)
 
-# Measure execution time for each algorithm and input size
-results = []
-for i in range(len(n_values)):
-    n = n_values[i]
-    array = arrays[i]
+    # Medir el tiempo de ejecución para cada algoritmo y tamaño de entrada
+    resultados = []
+    for i in range(len(valores_n)):
+        n = valores_n[i]
+        arreglo = arreglos[i]
 
-    start_time = time.time()
-    search_one_array(array, 42)
-    end_time = time.time()
-    search_one_array_time = end_time - start_time
+        tiempo_inicio = time.time()
+        buscar_un_arreglo(arreglo, 42)
+        tiempo_fin = time.time()
+        tiempo_buscar_un_arreglo = tiempo_fin - tiempo_inicio
 
-    start_time = time.time()
-    search_two_arrays(array, array, 42)
-    end_time = time.time()
-    search_two_arrays_time = end_time - start_time
+        tiempo_inicio = time.time()
+        buscar_dos_arreglos(arreglo, arreglo, 42)
+        tiempo_fin = time.time()
+        tiempo_buscar_dos_arreglos = tiempo_fin - tiempo_inicio
 
-    start_time = time.time()
-    check_common_element(array, array)
-    end_time = time.time()
-    check_common_element_time = end_time - start_time
+        tiempo_inicio = time.time()
+        verificar_elemento_comun(arreglo, arreglo)
+        tiempo_fin = time.time()
+        tiempo_verificar_elemento_comun = tiempo_fin - tiempo_inicio
 
-    start_time = time.time()
-    check_duplicates(array)
-    end_time = time.time()
-    check_duplicates_time = end_time - start_time
+        tiempo_inicio = time.time()
+        verificar_duplicados(arreglo)
+        tiempo_fin = time.time()
+        tiempo_verificar_duplicados = tiempo_fin - tiempo_inicio
 
-    results.append([search_one_array_time, search_two_arrays_time, check_common_element_time, check_duplicates_time])
+        resultados.append([tiempo_buscar_un_arreglo, tiempo_buscar_dos_arreglos, tiempo_verificar_elemento_comun, tiempo_verificar_duplicados])
 
-# Create pandas DataFrame to present the results
-df = pd.DataFrame(results, columns=['search_one_array', 'search_two_arrays', 'check_common_element', 'check_duplicates'])
-df.insert(0, 'n', n_values)
-# Save the results to a CSV file
-df.to_csv('/home/artur/ESCOM/ADA/Practica_lab_1/results.csv', index=False)
+    # Crear un DataFrame de pandas para presentar los resultados
+    df = pd.DataFrame(resultados, columns=['buscar un arreglo', 'buscar dos arreglos', 'verificar elemento comun', 'verificar duplicados'])
+    df.insert(0, 'n', valores_n)
+    # Guardar los resultados en un archivo CSV
+    df.to_csv('/home/artur/ESCOM/ADA/Practica_lab_1/results.csv', index=False)
 
-print(df)
+    print('Resultados guardados en el archivo CSV de manera exitosa.')
+
+if __name__ == '__main__':
+    main()
