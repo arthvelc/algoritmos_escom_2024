@@ -2,12 +2,13 @@ import random
 import time
 import pandas as pd
 
+#complejidad O(n)
 def buscar_un_arreglo(A, t):
     for i in range(len(A)):
         if A[i] == t:
             return True
     return False
-
+#complejidad O(n)
 def buscar_dos_arreglos(A, B, t):
     for i in range(len(A)):
         if A[i] == t:
@@ -16,14 +17,14 @@ def buscar_dos_arreglos(A, B, t):
         if B[i] == t:
             return True
     return False
-
+#complejidad O(n^2)
 def verificar_elemento_comun(A, B):
     for i in range(len(A)):
         for j in range(len(B)):
             if A[i] == B[j]:
                 return True
     return False
-
+#complejidad O(n^2)
 def verificar_duplicados(A):
     for i in range(len(A)):
         for j in range(i+1, len(A)):
