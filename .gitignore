@@ -1,0 +1,51 @@
+# Archivos y directorios generados por el entorno de desarrollo
+__pycache__/
+*.py[cod]
+*.so
+*.egg-info/
+dist/
+build/
+
+# Archivos de configuración
+*.ini
+*.cfg
+*.conf
+
+# Archivos de registro
+*.log
+
+# Directorios de entorno virtual
+venv/
+env/
+env_bak/
+
+# Dependencias instaladas
+lib/
+lib64/
+bin/
+include/
+share/
+
+# Archivos de caché
+.cache/
+.pytest_cache/
+.mypy_cache/
+
+# Archivos de respaldo
+*.bak
+*.swp
+*.~*
+
+# Archivos de resultados y gráficos generados
+results/
+figures/
+
+# Archivos de datos
+data/
+
+# Archivos de documentación
+docs/
+
+# Archivos .png y .csv
+*.png
+*.csv
