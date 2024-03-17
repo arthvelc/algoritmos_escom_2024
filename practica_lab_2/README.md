@@ -1,56 +1,55 @@
-# Nombre del Proyecto
+# Ejercicio de Laboratorio 2
 
-Breve descripción del proyecto.
+Se desarrollaron los siguientes algoritmos:
+Algoritmos de ordenamiento:
+
+Mergesort.
+Quicksort.
+Algoritmos de búsqueda:
+
+Búsqueda binaria.
+Búsqueda ternaria.
+
+Posteriormente se ejecutaron los algoritmos de ordenamiento y búsqueda en arreglos de números aleatorios con los siguientes tamaños.
+
+n=20,
+n=100,
+n=1000,
+n=10000,
+n=100000,
+n=1000000,
+n=5000000,
+n=10000000.
+
+Finalmente se midieron los tiempos de ejecución de todos los algoritmos, se generó un archivo csv donde contiene una tablacomparativa y con ayuda de matplotlib se generaron las graficas de los resultados de cada algorimo.
 
 ## Instalación
 
 1. Clona este repositorio en tu máquina local.
     ```
-    git clone https://github.com/tu-usuario/tu-repositorio.git
+    https://github.com/arthvelc/algoritmos_escom_2024/tree/master/practica_lab_2
     ```
 
 2. Navega al directorio del proyecto.
     ```
-    cd nombre-del-proyecto
+    cd ./practica_lab_2
     ```
 
 3. Instala las dependencias del proyecto.
     ```
-    npm install
+    pip install -r requirements.txt
     ```
 
 ## Uso
 
 1. Ejecuta la aplicación.
     ```
-    npm start
+    python3 main.py
     ```
 
-2. Abre tu navegador y visita `http://localhost:3000`.
+2. Se ejecutará el programa, este tardará unos momentos y después generará los archivos correspondientes a la ejecución.
 
-## Contribución
+Ejemplo de resultado de los plots
 
-Si deseas contribuir a este proyecto, sigue los siguientes pasos:
+![Plots generados](https://i.pinimg.com/originals/91/f0/d9/91f0d98111e8fb6928d79d02debc1ae1.png)
 
-1. Haz un fork de este repositorio.
-
-2. Crea una rama para tu nueva funcionalidad.
-    ```
-    git checkout -b nueva-funcionalidad
-    ```
-
-3. Realiza los cambios necesarios y haz commit.
-    ```
-    git commit -m "Agrega nueva funcionalidad"
-    ```
-
-4. Sube tus cambios a tu repositorio remoto.
-    ```
-    git push origin nueva-funcionalidad
-    ```
-
-5. Abre un pull request en este repositorio.
-
-## Licencia
-
-Este proyecto está bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
