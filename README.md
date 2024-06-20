@@ -1,4 +1,4 @@
-# Materia: Análisis y Diseño de Algoritmos
+# Análisis y Diseño de Algoritmos
 ![]()
 
 ### Profesor: Garcia Floriano Andrés
